@@ -1,0 +1,56 @@
+.dg {
+    display: grid;
+  }
+  
+  .gtc-auto {
+    grid-template-columns: auto;
+  }
+  
+  .gtc-min {
+    grid-template-columns: min-content;
+  }
+  
+  .gtc-max {
+    grid-template-columns: max-content;
+  }
+  
+  .gar-auto {
+    grid-auto-rows: auto;
+  }
+  
+  .gar-min {
+    grid-auto-rows: min-content;
+  }
+  
+  .gar-max {
+    grid-auto-rows: max-content;
+  }
+  
+  .gtc-half {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gtc-third {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gtc-fourth {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .gg1 {
+    grid-gap: 4px;
+  }
+  
+  .gg2 {
+    grid-gap: 12px;
+  }
+  
+  .gg3 {
+    grid-gap: 16px;
+  }
+  
+  .gg4 {
+    grid-gap: 20px;
+  }
+  

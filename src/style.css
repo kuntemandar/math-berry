@@ -1,0 +1,43 @@
+html, body {
+	font: 14px/1.21 "Comic Sans MS", cursive, sans-serif;
+  font-weight: 400;
+  background-color: rgb(233, 146, 74);
+}
+
+h1 {
+	text-align: left;
+}
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v50/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .bar {
+    padding: 10px 40px;
+    border-radius: 20px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid black;
+    background: black;
+    margin-left: 30px;
+}

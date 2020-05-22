@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "earnedit",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "preact build --no-prerender",
+    "serve": "sirv build --cors --single",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-synacor": "^3.0.4",
+    "node-sass": "^4.14.0",
+    "preact-cli": "^3.0.0-rc.6",
+    "preact-material-components": "^1.6.1",
+    "sass-loader": "^8.0.2",
+    "sirv-cli": "^0.4.5"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "idb-keyval": "^3.2.0",
+    "mongodb": "^3.5.7",
+    "preact": "^10.1.0",
+    "preact-head": "^1.0.3",
+    "preact-render-to-string": "^5.1.2",
+    "redux-bundler": "^27.0.0",
+    "redux-bundler-preact": "^2.0.1"
+  }
+}
