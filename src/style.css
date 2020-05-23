@@ -1,7 +1,9 @@
 html, body {
-	font: 14px/1.21 "Comic Sans MS", cursive, sans-serif;
+	font: 14px/1.21 "Verdana", cursive, sans-serif;
   font-weight: 400;
-  background-color: rgb(233, 146, 74);
+  height: 100vh;
+  background:linear-gradient(135deg,#5ee7df,#b490ca);
+
 }
 
 h1 {
@@ -40,4 +42,9 @@ h1 {
     border: 2px solid black;
     background: black;
     margin-left: 30px;
+}
+
+.selected {
+  opacity: 0.5;
+  color: red;
 }

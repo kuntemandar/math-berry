@@ -11,7 +11,7 @@ const getOperands = ( postiveResult = false ) => {
 const getOptions = (result) => {
   const options = [result, Math.floor(Math.random() * 10),  Math.floor(Math.random() * 10),  Math.floor(Math.random() * 100),  Math.floor(Math.random() * 100)]
   const optionsUniq = Array.from(new Set(options))
-  return shuffle(options.slice(0,4))
+  return shuffle(optionsUniq.slice(0,4))
 }
 const shuffle = array => array.sort(() => Math.random() - 0.5)
 
@@ -28,12 +28,21 @@ export default {
 
       return { operands, result, options };
     }
+    if(type === 'CLEAR_ALL') {
+      return {}
+    }
 
     return state;
   },
   selectOperands: (state) => state.main.operands,
   selectResult: (state) => state.main.result,
   selectOptions: (state) => state.main.options,
+  doUpdateUrlToHome: () => ({ store, dispatch }) => {
+    dispatch({
+      type: 'CLEAR_ALL',
+    })
+    store.doUpdateUrl('/')
+  },
   doAdd: () => ({ dispatch, store }) => {
     let [operand1, operand2] = getOperands();
     const result = operand1 + operand2
