@@ -42,7 +42,7 @@ export default connect(
             </a>
           </div>
           <a class='tl' onClick={() => doUpdateUrl('/help')}>
-              <i class="ma3 material-icons white f2">help</i>
+              <i class="ma3 mt3 material-icons white f2">help</i>
             </a>
         </div>
       </div>

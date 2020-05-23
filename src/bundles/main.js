@@ -12,7 +12,7 @@ const getOperands = ( postiveResult = false ) => {
 
 const getDivideOperands = () => {
   let operand1 = Math.floor(Math.random() * 10);
-  let operand2 = Math.floor(Math.random() * 10);
+  let operand2 = Math.floor(Math.random() * 10) || 1;
   let operand3 =(operand1 || 1 ) * (operand2 || 1)
 
   if(operand3 > operand2) {

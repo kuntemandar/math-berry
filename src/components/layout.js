@@ -12,7 +12,7 @@ const Layout = ({
   const colorMap = {
     "/add": "indianred",
     "/substract": "lightblue",
-    "/multiply": "lightyellow",
+    "/multiply": "#f5ea74",
     "/divide": "lightgreen",
   };
   const backgroundColor = {
