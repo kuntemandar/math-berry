@@ -1,47 +1,50 @@
 import { h } from "preact";
 import { connect } from "redux-bundler-preact";
-import posed from "react-pose";
+import Add from "../../assets/add.jpg";
+import Sub from "../../assets/sub.jpg";
+import Multiply from "../../assets/multiply.jpg";
+import Divide from "../../assets/divide.jpg";
 
-const Circle = posed.li({
-  pressable: true,
-  init: { scale: 1 },
-  press: { scale: 0.7 }
-});
 
 export default connect(
   "doAdd",
   "doSubstract",
   "doMultiply",
   "doDivide",
-  ({ doAdd, doSubstract, doMultiply, doDivide }) => {
+  'doUpdateUrl',
+  ({ doAdd, doSubstract, doMultiply, doDivide, doUpdateUrl }) => {
     return (
       <div class="tc">
         <header class="w-100 white f-subheadline tc pv5">Math Berry</header>
-        <ul>
-          <Circle>
+        <div class="dg gtc-half">
+          <div class="w-75 f-headline tc pl5">
             <a onClick={doAdd}>
-              {" "}
-              <i class="material-icons">add</i>
+              <img class="br4" src={Add} alt="Add" />
             </a>
-          </Circle>
-          <Circle>
+          </div>
+          <div class="w-75 f-headline tc pl5"></div>
+          <div class="w-75 f-headline tc pl5"></div>
+          <div class="w-75 f-headline tc pl5">
             <a onClick={doSubstract}>
-              {" "}
-              <i class="material-icons">remove</i>
+              <img class="br4" src={Sub} alt="Sub" />
             </a>
-          </Circle>
-          <Circle>
+          </div>
+          <div class="w-75 f-headline tc pl5">
             <a onClick={doMultiply}>
-              {" "}
-              <i class="material-icons">clear</i>
+              <img class="br4" src={Multiply} alt="Multiply" />
             </a>
-          </Circle>
-          <Circle>
+          </div>
+          <div class="w-75 f-headline tc pl5"></div>
+          <div class="w-75 f-headline tc pl5"></div>
+          <div class="w-75 f-headline tc pl5">
             <a onClick={doDivide}>
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAAoElEQVRoge3YQQrCMBBG4afnaJfSu0vwBF6pi/YCdWHdKCUmMCbC+2BWCcn8i9AyIEmSQo1AAta9bsDUtKMKIzAD21vNwNCwr2KJzxCvujbsq9jKcZAl4sJzxKEZW8ShUUHulWvdmTh+7JeGfVUZeD7sZa/EH4aQpBinL/eFfI0LZPts8YsSwiCSpF451+qJc61azrUynGv1yLmWJEm/9gBe70qwvhn94gAAAABJRU5ErkJggg==" />{" "}
+              <img class="br4" src={Divide} alt="Divide" />
             </a>
-          </Circle>
-        </ul>{" "}
+          </div>
+          <a class='tl' onClick={() => doUpdateUrl('/help')}>
+              <i class="ma3 material-icons white f2">help</i>
+            </a>
+        </div>
       </div>
     );
   }

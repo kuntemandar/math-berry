@@ -2,8 +2,14 @@ html, body {
 	font: 14px/1.21 "Verdana", cursive, sans-serif;
   font-weight: 400;
   height: 100vh;
-  background:linear-gradient(135deg,#5ee7df,#b490ca);
 
+}
+
+html {  
+  background-image: url("../assets/background.jpg");  
+  background-repeat: no-repeat;  
+  background-position: 0% 0%;
+  background-size: cover;
 }
 
 h1 {

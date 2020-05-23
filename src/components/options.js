@@ -5,13 +5,20 @@ import cn from "classnames";
 export default connect(
   "selectOptions",
   "selectResult",
-  ({ options, result }) => {
+  "doClear",
+  ({ options, result, doClear, operation }) => {
     const [selected, setSelected] = useState([]);
     const [success, setSuccess] = useState(false);
+
     const handleClick = (option) => {
       setSelected((prevArray) => [...prevArray, option]);
       if (option === result) {
         setSuccess(true)
+        setTimeout(() => {
+          setSuccess(false)
+          setSelected([])
+          doClear()
+          operation()}, 1800)
       }
     };
     return (

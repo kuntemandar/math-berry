@@ -1,3 +1,5 @@
+import { createSelector } from 'redux-bundler'
+
 const getOperands = ( postiveResult = false ) => {
   let operand1 = Math.floor(Math.random() * 10);
   let operand2 = Math.floor(Math.random() * 10);
@@ -8,6 +10,18 @@ const getOperands = ( postiveResult = false ) => {
   return [ operand1, operand2];
 };
 
+const getDivideOperands = () => {
+  let operand1 = Math.floor(Math.random() * 10);
+  let operand2 = Math.floor(Math.random() * 10);
+  let operand3 =(operand1 || 1 ) * (operand2 || 1)
+
+  if(operand3 > operand2) {
+    return [operand3, operand2]
+  }
+
+  return [operand2, operand3]
+
+}
 const getOptions = (result) => {
   const options = [result, Math.floor(Math.random() * 10),  Math.floor(Math.random() * 10),  Math.floor(Math.random() * 100),  Math.floor(Math.random() * 100)]
   const optionsUniq = Array.from(new Set(options))
@@ -37,11 +51,24 @@ export default {
   selectOperands: (state) => state.main.operands,
   selectResult: (state) => state.main.result,
   selectOptions: (state) => state.main.options,
+  selectIsOnHelp: createSelector(
+    'selectRouteInfo',
+    (routeInfo) => routeInfo && routeInfo.url === '/help'
+  ),
+  selectIsOnHome: createSelector(
+    'selectRouteInfo',
+    (routeInfo) => routeInfo && routeInfo.url === '/'
+  ),
   doUpdateUrlToHome: () => ({ store, dispatch }) => {
     dispatch({
       type: 'CLEAR_ALL',
     })
     store.doUpdateUrl('/')
+  },
+  doClear: () => ({dispatch}) => {
+    dispatch({
+      type: 'CLEAR_ALL',
+    })
   },
   doAdd: () => ({ dispatch, store }) => {
     let [operand1, operand2] = getOperands();
@@ -74,7 +101,7 @@ export default {
     store.doUpdateUrl('/multiply')
   },
   doDivide: () => ({ dispatch, store }) => {
-    let [operand1, operand2] = getOperands(true);
+    let [operand1, operand2] = getDivideOperands(true);
     const result = operand1 / operand2
     const options = getOptions(result);
     dispatch({

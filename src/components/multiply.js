@@ -2,7 +2,7 @@ import { h, Fragment } from "preact";
 import { connect } from "redux-bundler-preact";
 import Options from './options'
 
-export default connect("selectOperands", ({ operands }) => {
+export default connect("selectOperands", "doMultiply", ({ operands, doMultiply }) => {
   if (Array.isArray(operands)) {
     return <Fragment>
       <div class="dg gtc-half">
@@ -15,7 +15,7 @@ export default connect("selectOperands", ({ operands }) => {
         <div class="w-50 vh-20 f-headline tc pl4">{operands[1]}</div>
       </div>
       <div class="bar"></div>
-      <Options />
+      <Options operation={doMultiply}/>
     </Fragment>;
   }
 });
